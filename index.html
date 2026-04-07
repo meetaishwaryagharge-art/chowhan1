@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chowhan and Sons | Industrial Waterproofing</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-blue: #1a567e;
+            --brand-grey: #4a4a4a;
+            --soft-white: #ffffff;
+            --ice-blue: #f0f4f8;
+        }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+        body { 
+           font-family: 'Open Sans', sans-serif;
+            background-color: var(--soft-white); 
+            color: #2d3436;
+        }
+
+        h1, h2, h3, .nav-link { 
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+
+        /* --- Header & Navigation --- */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee;
+        }
+        .navbar-brand img { height: 50px; }
+  /* --- Enhanced Hero Animations --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes kenBurns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+@keyframes lineGrow {
+    from { width: 0; }
+    to { width: 100px; }
+}
+
+/* --- Hero Section Improvements --- */
+.hero-split {
+    min-height: 90vh; /* Slightly taller for impact */
+    display: flex;
+    align-items: center;
+    background: #0f2027; /* Fallback */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Image with Ken Burns Effect */
+.hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(26, 86, 126, 0.9) 30%, rgba(26, 86, 126, 0.4) 100%), 
+                url('https://images.unsplash.com/photo-1541913054-21b36443f09b?auto=format&fit=crop&q=80&w=1920');
+    background-size: cover;
+    background-position: center;
+    animation: kenBurns 20s infinite alternate ease-in-out;
+    z-index: 1;
+}
+
+/* Modern H1 Design */
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #fff 50%, #74b9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 6px;
+    background: var(--brand-blue);
+    animation: lineGrow 1s forwards cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    animation-delay: 0.8s;
+}
+
+.animate-fade {
+    opacity: 0;
+    animation: fadeInUp 0.8s forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+.hero-image-cut {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    background: url('https://chowhanandsons.com/wp-content/uploads/2024/07/02.jpg') center/cover;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 2;
+    border-left: 5px solid var(--brand-blue);
+}
+
+        /* --- Service Tiles --- */
+        .service-tile {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            border: none;
+            height: 400px;
+            color: white;
+        }
+        .service-tile img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+            z-index: 1;
+        }
+        .service-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(26, 86, 126, 0.95) 30%, transparent);
+            z-index: 2;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .service-tile:hover img { transform: scale(1.1); }
+        /* --- Membership Section (WAI, BNI, Rotary) --- */
+.membership-logo {
+    height: 65px;
+    width: auto;
+    margin-bottom: 20px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.membership-item:hover .membership-logo {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+        /* --- Client Section --- */
+        .client-scroller {
+            background: var(--ice-blue);
+            padding: 60px 0;
+        }
+        .client-tag {
+            background: white;
+            padding: 10px 20px;
+            margin: 5px;
+            display: inline-block;
+            border-left: 4px solid var(--brand-blue);
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #121212;
+            color: #888;
+            padding: 80px 0 20px;
+        }
+        .contact-icon { color: var(--brand-blue); margin-right: 10px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <style>
+            .logo{
+          height: 100px;
+
+    }
+</style>
+        <!-- Logo Image -->
+        <a class="navbar-brand" href="#">
+<img src="chowhanlogo.webp" class="logo">
+</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link text-dark" href="#about">The Company</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark" href="#clients">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-3 px-4" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-split">
+    <div class="hero-bg-overlay"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7" style="position: relative; z-index: 10;">
+                
+                <h5 class="text-uppercase mb-3 animate-fade delay-1" style="letter-spacing: 5px; color: #74b9ff;">
+                    Since 1980
+                </h5>
+                
+                <h1 class="hero-title animate-fade delay-2">
+                    CHOWHAN <br> & SONS
+                </h1>
+                
+                <p class="h4 fw-light mb-5 animate-fade delay-3" style="color: rgba(255,255,255,0.9); max-width: 600px;">
+                    SPECIALISTS IN WATERPROOFING, <span class="fw-bold text-info">STRUCTURAL REPAIR</span> AND INDUSTRIAL PAINTING
+                </p>
+                
+                        <p class="fst-italic lead animate-fade delay-3" style="color: rgba(255,255,255,0.9);">"Strengthening Properties For A Safer Tomorrow"</p>
+                  
+                <div class="animate-fade delay-3" style="animation-delay: 1s;">
+                    <a href="#services" class="btn btn-info btn-lg px-5 py-3 rounded-0 text-white fw-bold shadow-lg">
+                        OUR SOLUTIONS
+                    </a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg px-5 py-3 rounded-0 ms-3 fw-bold">
+                        GET A QUOTE
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+        <div class="hero-image-cut d-none d-lg-block"></div>
+</section>
+
+    <section id="about" class="py-5">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000" class="img-fluid shadow" alt="Construction Expertise">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-5 mb-4">50 Years of Excellence</h2>
+                    <p class="lead">We take this opportunity to introduce ourselves as a company undertaking waterproofing works successfully for the past 50 years.</p>
+                    <p>Our team of experts brings around 40 years of experience in the field, having worked with various reputed companies. We have successfully completed innumerable projects throughout Mumbai.</p>
+                    <div class="bg-light p-4 mt-4">
+                        <h5>Our Motto</h5>
+                        <p class="mb-0">Quality is our aim and customer satisfaction is our motto. We rely heavily on customer's word of mouth publicity power.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="container-fluid px-0">
+        <div class="row g-0">
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-tile">
+                    <img src="WhatsApp Image 2026-03-12 at 3.03.06 PM (1).webp" alt="Terrace">
+                    <div class="service-overlay">
+                        <h3>Terrace Waterproofing</h3>
+                         <p>Shelter your roof from ware and tear. Extend the life of your ceilings.</p>
+                        <ul class="list-unstyled small opacity-75 mb-0">
+                            <li>Conventional Method</li>
+                            <li>Liquid Membrane Coating</li>
+                            <li>Cementitious Coating</li>
+                        </ul>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-tile">
+                    <img src="https://t4.ftcdn.net/jpg/02/50/13/13/360_F_250131311_NLSUS7eJdfzUphBxdIipWlKtOUvdOwLb.jpg" alt="Basement">
+                    <div class="service-overlay">
+                        <h3>Basement Solutions</h3>
+                        <p>Our interior sealants application process keeps atmospheric humanity and moisture levels low.</p>
+                        <ul class="list-unstyled small opacity-75 mb-0">
+                            <li>Box Type & Membrane</li>
+                            <li>Grouting and Plastering</li>
+                            <li>PU Injection Grouting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-tile">
+                    <img src="WhatsApp Image 2026-03-12 at 3.03.43 PM (2).jpeg" alt="Structural">
+                    <div class="service-overlay">
+                        <h3>Structural Repair</h3>
+                        <p>Improving the foundation of dtructures, structural components,and repairing casualty damage.</p>
+                        <ul class="list-unstyled small opacity-75 mb-0">
+                            <li>Jacketing</li>
+                            <li>Polymer Concrete</li>
+                            <li>Guniting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-tile">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/023/826/214/small/white-and-wooden-bathroom-interior-design-generative-ai-free-photo.jpg" alt="Bathroom">
+                    <div class="service-overlay">
+                        <h3>Bathroom Systems</h3>
+                        <p>Avoid mold growth and dampness. Strengthen the plastering, tilling and concrete to eliminate leackages.</p>
+                        <ul class="list-unstyled small opacity-75 mb-0">
+                            <li>Conventional | Membrane</li>
+                            <li>Tile Joint Grouting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-tile">
+                    <img src="crackfill.jpg" alt="Cracks">
+                    <div class="service-overlay">
+                        <h3>Crack Filling</h3>
+                        <p>weather-resistant concrete epoxy to fartify the decaying exteriors of structures.</p>
+                        <ul class="list-unstyled small opacity-75 mb-0">
+                            <li>Polymer Coat | Elastomeric</li>
+                            <li>Weather-resistant Epoxy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card service-tile">
+                    <img src="WhatsApp Image 2026-03-12 at 3.03.29 PM.jpeg" alt="Painting">
+                    <div class="service-overlay">
+                        <h3>Industrial Painting</h3>
+                        <p>High standard waterproofing products to reinforce structural protection through painting.</p>
+                        <ul class="list-unstyled small opacity-75 mb-0">
+                            <li>Jet Spray Washing | Primer</li>
+                            <li>Waterproof Paint </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white border-bottom">
+        <div class="container">
+            <div class="row text-center g-4 align-items-center">
+                <div class="col-md-4">
+                    <p class="text-muted small mb-3">MEMBERS OF</p>
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="https://www.wai.org.in/wp-content/uploads/2022/08/wai.jpeg" 
+                             alt="WAI Logo" 
+                             style="height: 60px; width: auto; margin-bottom: 15px; filter: grayscale(100%); transition: 0.3s;"
+                             onmouseover="this.style.filter='grayscale(0%)'" 
+                             onmouseout="this.style.filter='grayscale(100%)'">
+                        <h6 class="fw-bold">WAI - WATERPROOFERS ASSOCIATION OF INDIA</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p class="text-muted small mb-3">MEMBERS OF</p>
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAlgsgjn7e8t77Y4uf3qk2UhpVmnt7OHTAyQ&s" 
+                             alt="BNI Logo" 
+                             style="height: 50px; width: auto; margin-bottom: 15px; filter: grayscale(100%); transition: 0.3s;"
+                             onmouseover="this.style.filter='grayscale(0%)'" 
+                             onmouseout="this.style.filter='grayscale(100%)'">
+                        <h6 class="fw-bold">BNI SOL</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p class="text-muted small mb-3">MEMBERS OF</p>
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAA6lBMVEX////wwzsoXabyxDn6yS/1xjX3xzPzxTj4yDIAU6wAVKslXKcAUq0AR6T2xjT7yi0eWqgAUK4VWKnrwEAATq8MVqoARqK0oGzYtVHIrF6nmXQARqG1oWvhuknCqGLVs1Tbt0+MioLNr1qck3qilndxfI+6pGjovkOsnHEAR6jt8PZccpemttR9goqVj37KrV1TbpqEhobBzOCXqs1zfY7V3Oo+ZaDh5vC2w9uSjX9jdpRVb5mLiYPQ2Og5Y6JHaZ54k8Frib2uvdhHcLCFnMZegLl2kcEASbKcrtBCba4APJo2Z65GcLH/0RyFIGA4AAAgAElEQVR4nO19CXeiytZ2oAaKAlIMolFUnBWNiUZjEpNoxu7keM7//ztfFSCCmnPvd997V2tO79WrVzfiUA9779pznZz8pt/0m37Tb/pNv+kAqX9z0//Vv+FIqP+HwemPm1/9Ow6Usmz0Llc5LV7/5pZ/Kt18vHt/vKQvGCWiKKRgXKcu3v6hvp//4wFbecZ9s51/3Fx5c5HECZs/Ntcejfbd0si/7r7/n0TXXhNADEfehmu8MQ7Bussnl/reiGDo3Hn/bD32YjhAkoBkfq6vPBoNRYAFfONqfe3V5LdISte4/TW/8kDozYQCGVQMzuMrE0qkkKD9Fl86D4ooujL5Vb/zIOh5FEEDp1585c95DBZpr+JLehtGV0bPv+p3HgS9xtCArhVzjXdxGoGFmrHSmhhdEIE1f/91v/SX0MRLy9LnFMd8NI5Yq58vo+iK0jEife6NY17D7c/UW9/o+cn3pnPdahvyZlP7bMdggYoRGls3xqUSg9WILK2XoALWgvln8sZrU58b7ndW+P3PoN1lvuwl+9z7WkNJcBCqqCvDj6EBtWjzWw1gfAsZJGL4kp/VWG0QfGO5PPeqDEgKGCR734/lGgnUU59eaV7PnSVg5fQ8fX2iPbTGc/YUv20StLEiAdbbmBffjm5Dq0oCcBrEDs5EXYMFuj/l+UOpU3TiC5JT7JTq7cXPWL1znaV/xO8K6ixmvsevv+3I6cqoRQtn7T8e4ytrhcTNTkgwUhQpIUVBmEApuaEW89FtMGbRDZcZB/J70Y1RjLGA95GD8+itNz+BhgCHQCiuAAQhEeCB5GXU80JobvJtFl8pGN/Yuc630JqNNK7Pr949Pb6icJgq1da4vZSpZakqpbY8aj+UqhVITiOE0YWef+e8pS3wWi7r6q9e0f+QVu315scNgx9ysChJpyEXSdW7gU11y6KLQXs8NmVZNkdL07Zdas4vigpBnMOw01oE8rNVW4sqHH3j3ZAbkmumkOAwGBQhAuAU1pojndqabNZ9h0HImERlWZMhq7qyQM219EGpIu5FsDgP7taAA8f4znbpY6K0+O7nQ0VSYKU50y15MKOmbLdYzVe69fGUc5ZbOlUcVYClLTttLprLkkPEG/xku+Qq67vFbM7Tu7s7XbOFBICESGeg2vaswRirzF1Zo/oIOjmTY6WZSLpkI42DZd9BiKtD6qptzorSRuPD+1X6i77BxvjqGXSS7FkTy0kWi0FLdjVZmyF22SxjJvhJW0AYyp7dgqUxu7D5P2kDNbqMXVLZ1BcFnOyeoBZswtGPP7z80cckPq3q5VDPP8Vw9b16rLVOQdN2BeNQn411my4kJNQ6JXDBr2q2QuSZAEjWNH5JX3bZTDMfFrpcWsMFp3T9LVcrw7xrGUeu7l/1BlaIdKF6sSqe6KFBrpCSrVMa8hLzdY6SW2dD/l/ahQMOlt2EpdzPCuZcZg5J5aedO+PX7d5fQ9uVy1AoPuCv1fvNa7DsQAyrx+0qvnlFwUgAO8PgVTDXo+lecqcOFheW3MPdNtdTc9YTgmfOWdMWfAYFZi43vFClC+em7HYUVLsoYWjK5pgVhGZb+pC7mGU1Cl+c57VOCB8pe2//4gcdMkUhdgEXLNr08eQjWHaRdOq0LbeFGcBsbmpLVhSbnj1mdYFSFdZt2b4gZ53imXRasmUqKT4hiLVsWRuxBtXclZwbSvxjKgsR1nkPhkosmEz78a9/08FSP19a62PkLNX3YAwBYGXXnUtYuss1yRmV1QobUG5+dplQVm6B9ThYmM347jdjNarNCbT1GhlSIatE+jkrEFinWhVy5psGb59Wee2Lc0P3qIMQ74v1SrgsznMFvkKpTbnFifCQ2ksIqJA/UpredVkzlMZ2c67Ji/kg1PaXaOH24Bl1q2wQbga10yq3WZsrTVOHSJFYK2f7iZ3LAf3V6/0/0WNQTcIIQGlgCfuygIHLmaTPa6iR02S3DbidBZti5zO5z8P9QvGX69q2qvI7ayXb7rHQBaJFhXUfhLXPP2JVwxLpnG1MCcc68uzP5yxhLeE+n5Z1sVCx6ykVBhEucgvUtIcXY5narrpo10udS79WqdX8y07pYb5SXapysbz7i6ssbstDONRtOSJN7SApFZUgY+/IYxCPQQmn0KpY8UrNKVQay5EDHb7hySZV1UGzGEe0QEhRNMspXtyrrmkOhX1KL3FVlTekd0Hqs2vBkTPWyclzekXgzEoW6qOGZdpFXDI11512JHia4pLNO5RTKHHfkHKFpg0YnGkpsKxa6h1wZP/qtf7fyV2mBJHU6VqIRgyObc3lTDUqABJpNgUpaaQQDkNZABGpt+Q7ZotvpCmsaJ2ksLoIvkGI+TEYss2a2HS9XNrBhOsrve2HoVEJcBaqNjspocXN9sUlCkNZEmKNuUrv04zlTlOfi4vBMRukCZ0bdwIBFHEPnMcKWltU7m29XYl8l1N21hwZRt7qJLyldKxPz9DnvW6IpgJrc93cYGXPQ44FBIuiEV8/aldnQyurAiTYmseuzzJescYFUPgtAofKhWzk389vTsxxwlqnF+rJyfXkMx8MykggAqC/TMTQXOKQ4/zRUERtLPNXr/I/pZXn/vmcxLEmQRVJbEhNvRqiBRaRLJl2IeQqRKr3gfccGd9psJpxRv98Zbj1LhEMBHuuGfMlCLGq2aa9RAD1kqBp/+rj6f31aPyeiXf30J4ZhvdDAHAV1KEEQ8Ueo+VooTU+d05DqHpysEoCU/q6LkRkc5Jytps3zxhWBFy4OxDMpWlOhJWI8tgDyB9GmBW7mawMw5oN5scScO7nHxjGULmsy4b50qcjKOFeZB5FaCkVW9P0EgslqyMH76ltbONMisqQlJH5oRrjMLvBWrqmuZWQJ8/CiJjsjplEZvbJ47thzUtnp5Cw6ZEYqO92ZP0oGBbnBrUdgBr62roK0UL+YuSLbZ/URsFrOhzcNwobsIrZEPvEoz2h4og/WvgohRXn0h4GFeoai54UbZ7AUY9CEG+MXiJJClfJVQQcM9nxY0mEYmsE5C7QrrbenPIl/a3kfP85GHWxiByG28IGK2HiKrggVyFKUv3N/DGw1nW+mbIVFY4KvE/t+BFa4Xoqsx3b6DquKA3BquxEXK5svbA2rtJYyZoMuEW7SW5LuHMc4Zo34yxjh5Nm2uyW9TgbBsu6uZOQSaohBDnGy86HPwdDEt4BajTt+dhtlv5O4LhHYnet5FS+SlJqad9X+Dkh48GHfRHzW2OT/ZGw9bF7x7mxdATaeGhnPlaEIDYER/QYpJBTX1+iVHZvqWVWZQqwAJoHe5DgUKSWvKlXTtM11SpoFyzNTD0hNj2eWqTr/GijaUtudlE2FzQgLb29KmVCU173pngtQ32N+qcS6C6yD8EeJm9lw2BXgA+Wrrylg9bKI7MkWfVFUnmh788fvy3SIYr7L/TOSm+cSkrXzKLFd8ToK0k7OBKTNKJrajbCZZOhmcWqjEOsvihSWNfFR2C1v2rW+dQ55MjfVobhN552l/kj4itB/c+gjsSepWcW5D7wBaHZV1ilCnJDHa599fGfKvfNcY9mPpwKG40VVHp8VQ8TqmEJtjOMpYlAIGp9XfyyGqbjWXdfZ2tc4XCzaUbJazPuWI2OM1ZDx3ibsagIMaOm9aVKcespsFDL++K2/pvVDGNcckZt0Y6Ch0dZDHgeVACZZhiLu3Ch5TUN3C/g8pop0+GrktH+U16/iD6pkXkYnHEzpTXHQ9ocgm5GBWv3sZUNa+1A3ZuKyfdSYCnVffJ685ynF1LMgDBrbdGGAgfy/3pl/yXqX52/PT09vX3c3jxylxhfZJaiJq4MgJWh4U12+KZvdNKl3Y3dyu2bd8NuSnhTD26nBdFsE47w9cnN1cv5+fnL1SEXBsp5wzBny5lsGYaucW2rZdy3cWqnA6Q7try3Lbg2td/hPWfbdvj1u2GWEE45U1s2r9oFRDM90b5vib8OV9vfeqUzUb7O/1Sq9RZSqpmFUCeTF+Rw1TdVbhE9Jp074R1brauPr4Hcw2kXUBhjq8wDaSF8N2hWaxKG2Kl1HvY7CgdAzzOWiIfCF0UydoN9h7PLlACWLqjxnJKVVMNFeEM6OHz1GSwKZAsqsQukn0hoPZB1qwFQ2OJQaye9bTgyNuMWY8VwgaZrPCea6cXIvAw3u8DtKph14A5UgrUy5gM9y3zLwbYVZBUOf+ad9DM3h0TaRxi1zCQK/2Fl4IZyHHa4lYNRdS9U3L1ppXcRu3mafnH/hnoAdOuVYfqH4oyRRYU2UhRpl05xTw5eQ7gmduYTyDIMpJ+bwf0l3PdWERsFTpqBtWX2N1weasf+e9BiKSEg6SeuzbiNRapVsnfNpLAIPrkqfl6G7AeUSOlg0VN+7gZzfy9UCiq0xPdkVKOarqyBRXV1qEHAp2AuJVIA/PQT59sUd19yxuxsrzQi2JkFq2eDb6GYW+ENv4YgBsplzlWD9tleqCR4KRs6d7yzm667aTNT4F1wwENGbj23t1YtKKNLRJQA2k/XstGEeyqLxMqq82WTMb8+y4W0vDuDpDG+q31xPxoHnzcvAWcklNGN65S2Ahu7CZGDov47398RVralQ2zp0QyQt2BZ27Yh4tURyIrLHJ2Wqo1GtdXWc/c+w3gvVBL05fxEbCqFLRNFC8OHADF/HsiHHqu5fjXch0vOXTBtvtt1vB7U8GgarS+YRWpz+wATSDDhf1BhFQzR/jvxQ7AKtzltyD+4l2YtlZsoxOmNAvsYPOqbN6rOCKiknWi3qkhkECuQp2BU2cNcqCLrQohRj1OJ20sINnOL7h59RfyFEVtgb9yrArW0dnSLCpnrxp8Hugvu0mqKs2pX7FE4MTEfbau0w1wKX3KIIaSq4elh+IH4ttbduZHcxWx1InJnQhlmPAXuPLa1Q90D95B3cZrR75oMhVu88dN+BPfdLHMBx5TDhKDCrI+TvldiYelHxV5sO4O1tN6+EXEKMk9JPNfwpxdfRQ0PkER5Bx6nHrfJd/hsKO/KVXtpo0yCAzWsjIGXc48rmz/UeZjxQH5umDYzAWwamUS2zn0sXE8/mAFB5aModIhIzEgh83RJY12sKBtRfw4GzsY1QZ1AlJMCPA1kMa/umpvtQ7ETktbPTfmDhCvLLXNAjP7JaHhtBfcFwg6T+tdXE6sGMkXYNtdAZL5lIF5RtZwwF5TDMCpabgIN58Z9qMIWiQcDYMswt0JcT1zClWJGP2JQsc77B89bNy/PVMTdforc+9ZmCBdPW3dzo2we52KVak4M7IHtfIolrvJTkQwq5+LsqWCr7c/gkOKt7ZB2gfJTN/L0fXLAOfyXlWEsHwqXtS7fwZS05UC5JEF9N+p+q7qdkLlwmzMIhyybbTgPBIJIfYhqukqWvbt6sR1mfWl6BpTGZbVXH6iG/nSY8vjiBvcFB4ohHwBIoJv5/TWwt4BIMFdbEhYsFTkwuPzMvry65xCSqTDKcXcU7CvmC4OrKGNo8SejhM0suFE3gz8PEK5bb362KbyTQCUDFn/6u6VpIb14dpWAWo5bAKASbFmSketXynEce7q79/3XYuAWybjSm7Cagkl5cYCR5XMjE33ZUSMZMytN/degR4piEhQqb+cJQytK4S/iUvBFfDgsrMxYpW41/UMQPsDC5YmVib2As22w/C+38x8UdnLcEEet/PZLonhZ8XMNJn8VS98DVidbeHiAXYiTbER4l7O+BmsSkAis5ldgXbLFVzmtCCz7uMB6MTJJqi2wKmA3CbimiTGG1VAMC9uGdz8WQx93ou79XQrBwhkFnxFDAA9QDK+8WQfiVKlxBiz/SwV/swrqQsHzFYJasHXLrRiOiHo50fVlentDLlF9cybCkcqbIFhpewcYf3hcGfKdH/WiKltpBPdSAc7e1MHEkH1hHqih6bA11/zkcxmaDithm0rtvcz1aJyBrScTukdichmUyvPgQCd0Pv7wDDq/61Ub/OeizMPuIAkbuxW3N5/BGEVh1UVorGdZ6zYQ6gfTyChlVXcPk9waQh9uGXXc0Kv45buRYawOE6qQriavumHoP8FWoLSFNknADX3k5cvI71M6OcEPcJAezH3jiZZCFL0kZEqaB+/bzPVhbacsqAPATyssdDg/zKRhivo351YFZCq6Tc4bqSmj8X2fwTBp8yXagImimJQJeevNRJscnG0caVam6hZzPc0g12rp3ZASUNHfrh4P3pOOSFjVmSyCiGfhcbZ/8twzi5tIFSqIrkSO1iB4veXL7N/+GcwFVtwcTSnsU2e+ZZ3+2SZb8azFEYVoTuLg39YCuNeStqK43T4FmZ6IeyrC7QCWZ0He8/JicJHIYdesdib4Jwps04pNDK7OxM74g9l1BQ6Z9DucFQ3VEaVpG0NLeITZKDxw7IUURpJhrdxqlaPeaaVrylsxeNy9TzFX6BBBOSvyRxVWPvmcE+UyE5DjNuemgGgda8iQcqYuorg8QJyi/H1Nsyvb6R0AS7q9Zi6xGUqKlfoqt4dw+1hKJU9u3lRVhsDZ2A6mO8OpQZm3XhzFyhKqmbTAUtAgWLJW+1JhuDJaRwFFoJQbHnQjh9zMIjPdez7gwF9CN++GOr4URepRb41muuq8JJqQ8F0oHKn46DZvOYNgWY0iYgoipDP72d5bd5OKL9th4TzqtV03ri5VxQ56dqEZn4cXmtmiH4HcU0KvR1QcaTaVx1UQteIqRaG0rtRU5H0LLMyqi5w97BV9v9ib0tzyksHdWr+YucLMxU1csYvIabG+UDleUc0RwLCz3DXKDoquXL219qcVX9dHTT/lLyJ1cvIczJ3TvctHsNosM3g5lqPCkMWDz1hhNC/vL2ITOTHt+iNI6gk51JXSXM2tYw4KK9v73cnDoEkmdao4ziZ0GppMQ13fyhamoOrMDM8YEgVDxy9e+hJHWakG738a6XGbaSK1mWGJekKQfAkiUndzLwLtvZHog6DnoL5lDiQPnTREthlcNPezlahmEzrmIzyCQYyDAlEaYyVqlA2thPa9TSEdkeRXnAZOhTvS389KhzqO8ypfYvuWhGFjbFJdVMaivUUxok7SCMtKt8pSyX1oUF2/B3ZL2Vd7pISNZ5Sa40ZK3FMECwfaV54eM5A8Wwz9ukxNTTQ/7FkMJ6yICtzIPcl2WGxaWW+eDdGCsleAxXhOzaRynavHnRsOd2J8lN/LLOTsbkHXW/pOOYy0W9tt9DIu0OYIp5sfef3OIXuqwytRrxPfeFd3Z3DrVTw81Alkz4tU04AoJMZzfdNaY9d3arIAdi5oPt01kOkKk3C6167/lrfG3R24yKYARbP1Of8OjBFImgb29qQfAt16vQqBRJys4Fw2W2gz4S8yrbe6BgBxHrb7UTL9htvB1f5EjO/Z2kMyyVzZqgBcHxZ8B3Ii3cu6d7CGvJ03rMXofjSjhuGZWMKZ5gf7gWSg6o6NnU6nTCfrnrD9RA2mtXTxMsz0YGsrIiFXlFvopmwbgeEdcLXyzdXH2/Pz89Pk5frR6CDcTEUeTFvdNOZ81UOX6ZFWtofRCPrIlMWnW2XD+dWnYqJ+//HlYzKZfNweTVRrNUo3Z2r6uKfO2RqqWjug+4ZgZLrvt8ccxXRuB4NGrMnZwF5PpNFkV0g6HH3uec+h023gK+tBBRq9P4PsXq9GoxAr88DdB9XWXAfU+aKA78UM5tEdZXXQmEVw2aiqjgnwt+sljoO0OYn3dVfuMIybmqlFcmjbX+VcMhNDsrHVDN1S0RsAHNttMFjQuLS7LXaR4+p9eqi2wt/SrZnrAjg1ZZM2MWYd2aUDKqZlgtrXDz8zi2Y99G8fuWInYNwetZsIoqZrr2BXOIpopj/9L1bzvyURXgDCZDSHXQLPRtRdNdhSL2NxqKP3lea9NVKmK35wv7itb5qiVrwUjj3XCtxUGXbY1BLvha30kYBHQX3ZKoQWKhnrPl+KbupjpOAHk4ooMVp+hVZmfhYervbf1TdFsFnxVVuoRM2dFRnBfi4aiItr8uEaV/uo75pxgw5w6Kjn2rbc4MYktrklJHF+U5b5/etJT2b78lhRzlcVUSCgqa02FaM4NTqosVE8alBSpFH+ML3nvdR3N10kXFZsTR8i0vVR1dVs9z4cn3W/X29lnPEvDqy9pjL/dICWtAQh6IR4mXRuJaMVAR588SwOkWQtlWaAS3NRhLCqS2RKZ9KQijwgIPO9A8nT0yT3JfxPwkS1E2b6+U6IKg5jSmfqurI92uyjAI+OZPImN8P1dPpKqVlDhoZWmyjWHLGiGw2QhvW9hY+pOaUSpHvwfAvmIigmRjRrC6KY87KDGKqm3QMRAZS/UHeHRi9BJxNfIBe5i4XtdkhhCFlLN2eqKG+XYNnSdret1ARcSdktQ+t/Bk1hfcC5GBDvNmHDUiuwg+t6KfOdyplxqOGGDPW99OhxgBEXRG5ju0i5hHBIXR8s9bkI0+HaYrcKKTVbeXsGxklYH9EIVd6Atou6KL9k80vWsmx3wCQlHSslzfwxGBB9bzPTHpBuu4RB19VM0USpDFzZ5DI50EciU6/gcbDasiGSg6VTx4qu6fozmAIlPJXGdiuso4uTVRTS0GXNdABuzRqbFC15OA6t9RaP/VBO4dnQ0tWagqq6e6mg7kKYRW5bgWNLPgv7chqL4DmzqPdBgvRWLUz/OeAbRTgumLs3muywni7TKq5wttUbSDnTqTHqnMbjgivHIYYnJ3QgBlFjv7k09ElfW3BBvLBazI8GGtojgFjPinJiCim5mfjfj+UGrPQAi5sfhlsKZwyzkk65xnIXEmupmozQUqMl7ucs5JPblUGHnQokhA2O5QieW2NcH450I/8udE543ixrWxdRcMBcItiqsIYWjzjH0oVqbAoT3uTEAkglG67eA7cJwtudAdUqDFTHpiyxC2rf/VVXx/wL5mHN4PWbaQTuqH2QVbf76dlzV8+TtcJ5CZpEwiMaR50cUtbdasPVqB15RFhqyYH2EXHRh7UBK+4heHxSg1kPhcPRw+H5Lt9tEYF+QWEP1L2z5lDCzWQzuLl9e35dHWxy9V/Re9AAQJmFfpxdIeKEPtfURh1XH51F87dhtW0YK9Hx9hIkCl70EPRvn3XDfvBZeFwy9CPIuYNZ4cIm4g5Dk45ED93PYwz57aFbYxjGnoR6pz6uRAkftUactq5PowSEQqRyW+WC++dGDJVizjOC2V2cPwWwMrUoVakpa0tMBrMLH2LY0JdKWExpHF4fxX9A6zOyBVpuA8cnWLgt4kBWXFB1ehZVfiCCG835KN3jW212unGmGcGzqUqXVUfxh1Sc74dWLtXGLWsZpb1Yfbvh4CgpOSMbSDN6x8Lj5cS0WjIa+Yw9mLY16EQzRiRRlJXOSCvx1DAFo869apptyGoNzDpUVqukRrl5pSZDnPn+dxSG1d/S0+aMbKDc64soKE8ryLdctV1baMuBpbvDanwY0Q5xAFF16HIjQZOxMtCp3WB1W3a7pOzK7nwzKvFoJsB/TTdB6twBQKbRnijOnGBO2zap5pZZ7U7TXXde8k8hPkXxuWqi+O8UQ+SXuFFlr8a2bDfZWJwYZqMK5RYIczT1IeVYnRaOXhBf5XTWVBJHm3BbawDZaOr81ebsomFJYbBja6arq8ths1w8q3Qdp1vxi4XmcKlzsrXVX2yhuVUWDkOkRcYxs6eaHp4tmRBcHkmk4Su6TsenMHeCScPku5mDm7ppCz6xL2BHH5+xpq0NLhamaes65VueZenUpbqu3tc73apLG6Rpux0Wdm2oPglj78JjgoWkko3vnkfOWj/MjVMN20GLcS94QJc1WGmrmhnW1pA5pTNWde0S81XZ7IixLOZ0PNK0+06NG1NMKrjmmFRUcdavOHLnnjU4yrQNFADHwQgkzMVmx621vIu1FCJp5L0Hba6SYEm36phdLkJUCJJ691XYssWo33tzxnyXq3IGG1Sb/+U0FGem8gsm4VzldllhJo8BG2imXWbiI403ukgmJqHSEU1V2aUkWQPgpek9nrx4ixqWcOXekqtMHLJNG7ggHF8gaxQBparOWccV1UlITBzR1FyXRWdlFUnL1mZdJmjsqqI4nEu0fnVyY+rrMlWwdxrC0dBLvhcVWjvD4FM89RtZbyHRoKPlBtxs0JYMqLkq7vB/DmBXgfJQnBdNfdKC4XwZtxhNlDeHpKvLmluvFkszfSFaWVDTipo1n4NBNOoOlrwD7i781/QUlKFCnAvVi2OifT2q8kcXOt8X3Q7HhCvuuThnGzZ93LrjRhSXwkoOKQIsuwWj0VI2io55d12dG/9hW09xHRu8coNhDSLY2x2+clz0HpSKQ2sTsppYcUkbdh5otMFxS2tsiqPJp0Pi9FjbtOusZRXCw5DNIYx6gNwqKYRGlpuMN2f3yakNH3pwX2gebh33v0s/PMNN1WHpyehuQJw72xLR+TK7s2XVYYtwXN9Ioz6cL4dEHG4k+iXCsiWz/VfD1VyttSnD5aZCqs1sZeSPJDb6d5SpKLsNNul5ALDSW1LbHnZLNtdejmo3sWiHW0FxCrcCR1zu1NN4tpS2sNT7Mj4FqYxkZjJG/3jyqv8mvW+m+YIKRACJym/dMmWz/telq2mnAKn2HfHLhV6ZiNnMtBaKo2bTxUVNvIGUk1zZ31XZfAfKt5Icu6QvCwhz9oKNO25LuTPOSG6BdSmt/XVPuSJHjBtc5nC4sl112fThaciKcq6wRuvL8Tbfg642w/FZ23413LqYHqxg2C2Plyp3mOlyYJrT8GAKjTs/pu3q+qjecThSolmnTo3ndzepet5/mNh3oYm6Vu+4HJyf3DzpkSUhAYQhOus0h4OZRvUwIEq15Xzc7NQwwfFY6rGlvt2c9NXBWpR3JuN9K0rqa5VadLpE30vkUvQ3nWICIZYcTkCc7hD2aa5fR70ob3oVrCMz+Kh6of9/aV3mLg5FCy+k6rGASEGgcNADiBBSEOLgJQUfybGjkz2yB3AAAAG4SURBVKAFY/gOtTPnv0E0OrhB6cputMqX5PBHIP1074fNQrW75iSlWm4OR/Tnpv1yXSjyJMIXAqxDPUfgv0LekIUVIWaMVao6Wemob+9a3sslTXQwp+bl5zc1GfC+qdd6CsbcG1Tgw1FUf/yH9GyMziDrWfJaep6SunfSDgeKXG9K/+JJP/I8uWWZ+DOTYNRlxcV3MNq/pis7GKYHpCSlDcCJoNmU/q3bnM6TAub0NJtH173fKcH5dnSu0lQZQgIWvogDd/l1E916lFs/v+4Uy47++SF/Z4t0H63FEEjqU3Ql6QtTOrH2ftNjFf9FQe4/hiZuBBYcryPCP9ZaLJ6ZIWyxeG43XHxrFfUvKTYdFD+pXX5Zq6hkGsvJR9AIRXPvudL/IHo0BA5A2RQX38Qanuv3JEb8qUnhdKhv7Tf/G+S1zyCJK9Eiik0F1NvYUH3vHmJYGR918ua/QG+eYQ7baZY5D0I5ZMs/N9eu8u3xIvD+2fpd0NXb6o90Uqbv1aGi4EYmvXz7h/nj9h/OV3vpjXaq1eroyzOkf1OawlNC//iHK/N/m/o3N79F7jf9pt/0m37TbzpI+n8xmHOSDKkYMAAAAABJRU5ErkJggg==" 
+                             alt="Rotary Logo" 
+                             style="height: 70px; width: auto; margin-bottom: 15px; filter: grayscale(100%); transition: 0.3s;"
+                             onmouseover="this.style.filter='grayscale(0%)'" 
+                             onmouseout="this.style.filter='grayscale(100%)'">
+                        <h6 class="fw-bold">ROTARY INTERNATIONAL</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="clients" class="client-scroller">
+        <div class="container">
+            <h2 class="text-center mb-5">Prominent Clients </h2>
+            <div class="text-center">
+                <div class="client-tag">Ion Exchange (India) Ltd. </div>
+                <div class="client-tag">L&T Construction </div>
+                <div class="client-tag">Viacom 18 </div>
+                <div class="client-tag">Atos Syntel</div>
+                <div class="client-tag">G.H.P. Corporation</div>
+                <div class="client-tag">Indiana Engineering Works</div>
+                <div class="client-tag">Trishla Developers</div>
+                <div class="client-tag">R.K. Builders</div>
+                <div class="client-tag">Kashish Construction</div>
+                
+                <h5 class="mt-5 mb-4 text-muted">Co-operative Housing Societies</h5>
+                <div class="client-tag">Adarsh CHS </div>
+                <div class="client-tag">Sangeet CHS</div>
+                <div class="client-tag">Natraj CHS</div>
+                <div class="client-tag">Holy Plaza CHS</div>
+                <div class="client-tag">Sahyog CHS</div>
+                <div class="client-tag">City Tower</div>
+                <div class="client-tag">Varsha Housing Society</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <h3 class="text-white mb-4">CHOWHAN AND SONS</h3>
+                    <p>Providing specialized structural solutions and waterproofing across Mumbai since 1980.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="text-white mb-4">Get In Touch</h4>
+                    <p class="mb-2"><span class="contact-icon">📞</span> 9870357682 / 9833834787</p>
+                    <p class="mb-2"><span class="contact-icon">📧</span> chowhanandsons07@gmail.com </p>
+                    <p class="mb-2"><span class="contact-icon">🌐</span> www.chowhanandsons.in </p>
+
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="text-white mb-4">Our Office</h4>
+                    <p class="opacity-75">
+                        Office no. 1112, 11th floor, JMS Business Centre, Ohsiwara, Jogeshwari (W), Mumbai 400102.
+                    </p>
+                </div>
+            </div>
+            <hr class="mt-5">
+            <div class="text-center small opacity-50">
+                &copy; 2026 Chowhan and Sons. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
